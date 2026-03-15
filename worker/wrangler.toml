@@ -146,13 +146,13 @@ database_id = "c496b-8ce1-42cb-b1ec-23f95b9a521c"
 # [ai]
 # binding = "AI"
 
-[[kv_namespaces]]
-binding = "KV"
-id = "a06adf0b4a2bcd3f"
+# [[kv_namespaces]]
+# binding = "KV"
+# id = "a06adf0b4a2bcd3f"
 
-[[kv_namespaces]]
-binding = "DB_PASSWORD"
-id = "9cbfd0d630d762e7"
+# [[kv_namespaces]]
+# binding = "DB_PASSWORD"
+# id = "9cbfd0d630d762e7"
 
 # ratelimit config for /api/new_address
 # [[unsafe.bindings]]
