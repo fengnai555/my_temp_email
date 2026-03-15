@@ -240,7 +240,7 @@ export const newAddress = async (
         } else if (message && message.includes("UNIQUE")) {
             throw new Error(msgs.AddressAlreadyExistsMsg)
         } else {
-            throw new Error(msgs.FailedCreateAddressMsg)
+            throw new Error(`${msgs.FailedCreateAddressMsg}: ${message}`)
         }
     }
     const address_id = await c.env.DB.prepare(
