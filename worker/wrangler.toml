@@ -137,22 +137,18 @@ ENABLE_AUTO_REPLY = false
 # ]
 # """
 
-# [[d1_databases]]
-# binding = "DB"
-# database_name = "temp-email"
-# database_id = "c496b-8ce1-42cb-b1ec-23f95b9a521c"
+[[d1_databases]]
+binding = "DB"
+database_name = "temp-email"
+database_id = "c7386211-7c6b-496b-8ce1-23f95b9a521c"
 
-# Workers AI binding (required for AI email extraction)
-# [ai]
-# binding = "AI"
+[[kv_namespaces]]
+binding = "KV"
+id = "d2eb4738f0a14d3e9cbfd0d630d762e7"
 
-# [[kv_namespaces]]
-# binding = "KV"
-# id = "a06adf0b4a2bcd3f"
-
-# [[kv_namespaces]]
-# binding = "DB_PASSWORD"
-# id = "9cbfd0d630d762e7"
+[[kv_namespaces]]
+binding = "DB_PASSWORD"
+id = "2dfc0c7ce73f410ba06adf0b4a2bcd3f"
 
 # ratelimit config for /api/new_address
 # [[unsafe.bindings]]
