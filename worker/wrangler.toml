@@ -137,10 +137,10 @@ ENABLE_AUTO_REPLY = false
 # ]
 # """
 
-[[d1_databases]]
-binding = "DB"
-database_name = "temp-email"
-database_id = "c496b-8ce1-42cb-b1ec-23f95b9a521c"
+# [[d1_databases]]
+# binding = "DB"
+# database_name = "temp-email"
+# database_id = "c496b-8ce1-42cb-b1ec-23f95b9a521c"
 
 # Workers AI binding (required for AI email extraction)
 # [ai]
