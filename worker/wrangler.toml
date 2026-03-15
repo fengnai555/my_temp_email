@@ -151,7 +151,7 @@ binding = "KV"
 id = "a06adf0b4a2bcd3f"
 
 [[kv_namespaces]]
-binding = "DB"
+binding = "DB_PASSWORD"
 id = "9cbfd0d630d762e7"
 
 # ratelimit config for /api/new_address
