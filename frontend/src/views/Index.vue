@@ -59,6 +59,20 @@ const { t } = useI18n({
       webhookSettings: 'Webhook 设置',
       query: '查询',
       enterSimpleMode: '极简模式',
+    },
+    'zh-TW': {
+      mailbox: '收件匣',
+      sendbox: '寄件匣',
+      sendmail: '發送郵件',
+      auto_reply: '自動回覆',
+      accountSettings: '帳戶',
+      appearance: '外觀',
+      about: '關於',
+      s3Attachment: 'S3 附件',
+      saveToS3Success: '儲存到 S3 成功',
+      webhookSettings: 'Webhook 設定',
+      query: '查詢',
+      enterSimpleMode: '極簡模式',
     }
   }
 });

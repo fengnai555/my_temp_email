@@ -85,6 +85,18 @@ const { locale, t } = useI18n({
             user: '用户',
             status: '状态',
             ok: '确定',
+        },
+        'zh-TW': {
+            title: 'Cloudflare 臨時郵件',
+            dark: '深色',
+            light: '淺色',
+            accessHeader: '存取密碼',
+            accessTip: '請輸入網站存取密碼',
+            home: '首頁',
+            menu: '選單',
+            user: '使用者',
+            status: '狀態',
+            ok: '確定',
         }
     }
 });
