@@ -53,11 +53,23 @@ const authFunc = async () => {
 }
 
 const changeLocale = async (lang) => {
-    if (lang == 'zh') {
-        await router.push(route.fullPath.replace('/en', ''));
+    const currentLang = route.params.lang;
+    let newPath = route.fullPath;
+    
+    if (currentLang) {
+        // Replace current lang prefix (e.g. /en/admin -> /zh-TW/admin)
+        newPath = route.fullPath.replace(`/${currentLang}`, lang === 'zh' ? '' : `/${lang}`);
     } else {
-        await router.push(`/${lang}${route.fullPath}`);
+        // Add lang prefix if not 'zh' (default)
+        if (lang !== 'zh') {
+            newPath = `/${lang}${route.fullPath}`;
+        }
     }
+    // Clean up potential double slashes
+    newPath = newPath.replace('//', '/');
+    if (newPath === '') newPath = '/';
+    
+    await router.push(newPath);
 }
 
 const { locale, t } = useI18n({
@@ -73,6 +85,7 @@ const { locale, t } = useI18n({
             user: 'User',
             status: 'Status',
             ok: 'OK',
+            lang: 'Language',
         },
         zh: {
             title: 'Cloudflare 临时邮件',
@@ -85,6 +98,7 @@ const { locale, t } = useI18n({
             user: '用户',
             status: '状态',
             ok: '确定',
+            lang: '语言',
         },
         'zh-TW': {
             title: 'Cloudflare 臨時郵件',
@@ -97,6 +111,7 @@ const { locale, t } = useI18n({
             user: '使用者',
             status: '狀態',
             ok: '確定',
+            lang: '語言',
         }
     }
 });
@@ -185,25 +200,35 @@ const menuOptions = computed(() => [
         key: "theme"
     },
     {
-        label: () => h(
-            NButton,
+        label: () => t('lang'),
+        key: "lang",
+        icon: () => h(NIcon, { component: Language }),
+        children: [
             {
-                text: true,
-                size: "small",
-                style: "width: 100%",
+                label: "English",
+                key: "en",
                 onClick: async () => {
-                    locale.value == 'zh' ? await changeLocale('en') : await changeLocale('zh');
+                    await changeLocale('en');
                     showMobileMenu.value = false;
                 }
             },
             {
-                default: () => locale.value == 'zh' ? "English" : "中文",
-                icon: () => h(
-                    NIcon, { component: Language }
-                )
+                label: "简体中文",
+                key: "zh",
+                onClick: async () => {
+                    await changeLocale('zh');
+                    showMobileMenu.value = false;
+                }
+            },
+            {
+                label: "繁體中文",
+                key: "zh-TW",
+                onClick: async () => {
+                    await changeLocale('zh-TW');
+                    showMobileMenu.value = false;
+                }
             }
-        ),
-        key: "lang"
+        ]
     },
     {
         label: () => h(
