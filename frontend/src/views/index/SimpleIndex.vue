@@ -63,6 +63,22 @@ const { t } = useI18n({
             addressCredentialTip: '请复制邮箱地址凭证，你可以使用它登录你的邮箱。',
             deleteSuccess: '邮件删除成功',
             refreshAfter: '{msg}秒后刷新',
+        },
+        'zh-TW': {
+            exitSimpleIndex: '退出極簡',
+            copyAddress: '複製',
+            addressCopied: '地址複製成功',
+            refreshMails: '重新整理',
+            noMails: '暫無郵件',
+            prevPage: '上一頁',
+            nextPage: '下一頁',
+            refreshSuccess: '郵件重新整理成功',
+            mailCount: '{current} / {total} 封郵件',
+            accountSettings: "帳戶設定",
+            addressCredential: '信箱地址憑證',
+            addressCredentialTip: '請複製信箱地址憑證，您可以使用它登入您的信箱。',
+            deleteSuccess: '郵件刪除成功',
+            refreshAfter: '{msg} 秒後重新整理',
         }
     }
 })
